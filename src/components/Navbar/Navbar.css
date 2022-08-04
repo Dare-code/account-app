@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #7663cc;
+  border-radius: 5px;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  width: 50px;
+  margin-left: 10px;
+}
+.menu {
+  color: white;
+}
+.menu ul {
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+}
+.menu ul li {
+  margin-left: 15px;
+}
+.user button {
+    padding: 10px 10px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #7663cc;
+}
+.user .fa-user {
+    margin: 0 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}

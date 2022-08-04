@@ -1,0 +1,12 @@
+.mainMenu {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.filterMenu {
+  padding: 10px 10px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #7663cc;
+}
