@@ -8,22 +8,16 @@ import { useState } from "react";
 
 const App = () => {
   const [company, setCompany] = useState([]);
-
-  const addNewCompany = () => {
-    setCompany([
-      ...company,
-      {
-        title: "Invoice",
-        name: "Company name",
-        date: "20/10",
-        price: 599,
-      },
-    ]);
-  };
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="App">
-      <Navbar setCompany={setCompany} addNewCompany={addNewCompany} />
+      <Navbar
+        setCompany={setCompany}
+        company={company}
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+      />
       <FilterMenu />
       <Invoices company={company} />
     </div>

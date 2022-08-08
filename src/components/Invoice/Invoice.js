@@ -1,13 +1,13 @@
 import React from "react";
 import './Invoice.css'
 
-const Invoice = ({ invoice }) => {
+const Invoice = ({ company }) => {
     return (
         <>
-            <div>{invoice.title}</div>
-            <div>{invoice.date}</div>
-            <div>{invoice.name}</div>
-            <div>{invoice.price}$</div>
+            <div>{company && company.title}</div>
+            <div>{company && company.date}</div>
+            <div>{company && company.name}</div>
+            <div>{company && company.price}$</div>
             <div>Edit invoice</div>
             <button>Delete</button>
         </>
