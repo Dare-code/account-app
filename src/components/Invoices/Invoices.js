@@ -6,7 +6,9 @@ const Invoices = ({ company }) => {
     return (
         <>
             <div className="invoice">
-                <Invoice company={company} />
+                {company.map((invoice, i) => {
+                    return <Invoice key={i} invoice={invoice} />
+                })}
             </div>
         </>
     );

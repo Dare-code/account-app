@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
 
 const Modal = ({ setOpenModal, setCompany, company }) => {
-    console.log({company})
+    const [newCompany, setNewCompany] = useState([]);
+
     const submitNewCompany = (e) => {
         e.preventDefault();
         const { value, name } = e.target;
-        setCompany({
-            ...company,
-            [name]: value,
-        });
+        setNewCompany([
+            ...newCompany,
+            {
+                [name]: value
+            }]);
     };
+    const addCompany = () => {
+        setCompany(newCompany)
+    }
 
     return (
         <div className="modalBackground">
@@ -28,7 +33,7 @@ const Modal = ({ setOpenModal, setCompany, company }) => {
                     <h1>Add new Company</h1>
                 </div>
                 <div className="body">
-                    <form>
+                    <form onSubmit={submitNewCompany}>
                         <input
                             type="text"
                             onChange={submitNewCompany}
@@ -39,6 +44,7 @@ const Modal = ({ setOpenModal, setCompany, company }) => {
                         <input
                             type="number"
                             onChange={submitNewCompany}
+                            min="0"
                             placeholder="Enter Price"
                             name="price"
                             value={company.price}
@@ -62,11 +68,14 @@ const Modal = ({ setOpenModal, setCompany, company }) => {
                     >
                         Cancel
                     </button>
-                    <button onClick={() => {
-                        setOpenModal(false);
-
-                    }}
-                    >Continue</button>
+                    <button
+                        onClick={() => {
+                            setOpenModal(false);
+                            addCompany()
+                        }}
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
         </div>
