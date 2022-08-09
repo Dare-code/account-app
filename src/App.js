@@ -7,19 +7,18 @@ import Invoices from "./components/Invoices/Invoices";
 import { useState } from "react";
 
 const App = () => {
-  const [company, setCompany] = useState([]);
+  const [companies, setCompanies] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <div className="App">
       <Navbar
-        setCompany={setCompany}
-        company={company}
+        setCompanies={setCompanies}
+        companies={companies}
         modalOpen={modalOpen}
         setModalOpen={setModalOpen}
       />
       <FilterMenu />
-      <Invoices company={company} />
+      <Invoices companies={companies} />
     </div>
   );
 };

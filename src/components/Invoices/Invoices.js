@@ -2,16 +2,17 @@ import React from "react";
 import "./Invoices.css";
 import Invoice from "../Invoice/Invoice";
 
-const Invoices = ({ company }) => {
-    return (
-        <>
-            <div className="invoice">
-                {company.map((invoice, i) => {
-                    return <Invoice key={i} invoice={invoice} />
-                })}
-            </div>
-        </>
-    );
+const Invoices = ({ companies }) => {
+  return (
+    <>
+      {companies.map((invoice, i) => {
+        return (
+          <div className="invoice">
+            <Invoice key={i} invoice={invoice} />
+          </div>
+        );
+      })}
+    </>
+  );
 };
-
 export default Invoices;
