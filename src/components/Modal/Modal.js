@@ -3,14 +3,17 @@ import "./Modal.css";
 
 const Modal = ({ setOpenModal, setCompanies, companies }) => {
   const [company, setCompany] = useState();
-
+    console.log(company)
   const updateCompany = (e) => {
+  
+  
     const { value, name } = e.target;
     setCompany({
       ...company,
       [name]: value,
     });
   };
+
   const addCompany = () => {
     setCompanies([...companies, company]);
   };
